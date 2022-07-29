@@ -10,4 +10,6 @@ class StarLinkColors {
   static const Color buttonBackground = Color(0xFFf1f1f9);
   static const kPrimaryColor = Color(0xFF6F35A5);
   static const kPrimaryLightColor = Color(0xFFF1E6FF);
+  static const Color backgroundColor = Color(0xFFFBFBFD);
+  static const Color homePrimaryColor = Color(0xFFF67952);
 }

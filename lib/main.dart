@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:star_link/CartScreen/CartScreen.dart';
 import 'package:star_link/OnboardingViews/OnBoardingScreen.dart';
 
 import 'Authendication/LoginMainWidget.dart';
-import 'HomePage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   final prefs = await SharedPreferences.getInstance();
   bool isLoggedIn = prefs.getBool("is_logged_in") != null
       ? prefs.getBool("is_logged_in")!
@@ -19,11 +21,10 @@ Future<void> main() async {
       title: 'StarLink',
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
-          primarySwatch: Colors.green,
           fontFamily: "Poppins",
           textTheme: const TextTheme(bodyText2: TextStyle(fontSize: 17))),
       home: isLoggedIn
-          ? const HomePage()
+          ? CartScreen()
           : isOnboardCompleted
               ? const LoginMainScreen()
               : const OnboardingScreen());

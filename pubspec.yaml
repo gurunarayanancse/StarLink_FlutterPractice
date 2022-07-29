@@ -37,6 +37,8 @@ dependencies:
   shared_preferences: ^2.0.15
   flutter_svg: ^1.1.1+1
   fluttertoast: ^8.0.9
+  flutter_slidable: ^2.0.0
+  badges: ^2.0.3
 
 
 dev_dependencies:

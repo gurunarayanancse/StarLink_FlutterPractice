@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:star_link/Authendication/SignUpScreen.dart';
-import 'package:star_link/HomePage.dart';
+import 'package:star_link/CartScreen/CartScreen.dart';
 import 'package:star_link/helpers.dart';
 
 import '../StarLinkColor.dart';
@@ -23,7 +23,7 @@ class SignInComponent extends StatelessWidget {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool("is_logged_in", true);
     Navigator.pushAndRemoveUntil(context,
-        MaterialPageRoute(builder: (_) => const HomePage()), (route) => false);
+        MaterialPageRoute(builder: (_) => CartScreen()), (route) => false);
   }
 
   RoundedTextField emailTextField = RoundedTextField(
@@ -32,14 +32,17 @@ class SignInComponent extends StatelessWidget {
     hintText: "Your Email",
     fontWeight: FontWeight.w500,
     icon: Icons.person,
+    onChange: (value) {},
   );
   RoundedTextField passwordTextField = RoundedTextField(
-      border: InputBorder.none,
-      textColor: StarLinkColors.kPrimaryColor,
-      hintText: "Your Password",
-      fontWeight: FontWeight.w500,
-      icon: Icons.lock,
-      isPasswordField: true);
+    border: InputBorder.none,
+    textColor: StarLinkColors.kPrimaryColor,
+    hintText: "Your Password",
+    fontWeight: FontWeight.w500,
+    icon: Icons.lock,
+    isPasswordField: true,
+    onChange: (value) {},
+  );
   @override
   Widget build(BuildContext context) {
     fToast.init(context);
@@ -48,6 +51,9 @@ class SignInComponent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           emailTextField,
+          const SizedBox(
+            height: 15,
+          ),
           passwordTextField,
           MaterialButton(
             onPressed: () {

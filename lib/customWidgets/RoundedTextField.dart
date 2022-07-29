@@ -13,17 +13,31 @@ class RoundedTextField extends StatefulWidget {
   bool passwordEncrypted = true;
   bool isPasswordField;
   TextEditingController controller = TextEditingController();
-  RoundedTextField({
-    Key? key,
-    this.hintText = "",
-    this.textColor = StarLinkColors.kPrimaryColor,
-    this.padding = const EdgeInsets.only(left: 25),
-    this.border = InputBorder.none,
-    this.fontWeight = FontWeight.normal,
-    this.icon,
-    this.fontSize = 15,
-    this.isPasswordField = false,
-  }) : super(key: key);
+  EdgeInsets margin;
+  Color backgroundColor;
+  double borderRadius;
+  double height;
+  List<BoxShadow>? boxShadow;
+  Widget? suffix;
+  Function onChange;
+  RoundedTextField(
+      {Key? key,
+      this.hintText = "",
+      this.textColor = StarLinkColors.kPrimaryColor,
+      this.padding = const EdgeInsets.only(left: 25, right: 10),
+      this.border = InputBorder.none,
+      this.fontWeight = FontWeight.normal,
+      this.icon,
+      this.fontSize = 15,
+      this.isPasswordField = false,
+      this.margin = const EdgeInsets.only(left: 25, right: 25),
+      this.backgroundColor = StarLinkColors.kPrimaryLightColor,
+      this.borderRadius = 25,
+      this.height = 50,
+      this.boxShadow,
+      this.suffix,
+      required this.onChange})
+      : super(key: key);
   @override
   State<RoundedTextField> createState() => _RoundedTextFieldState();
 }
@@ -35,31 +49,47 @@ class _RoundedTextFieldState extends State<RoundedTextField> {
   Widget build(BuildContext context) {
     widget.controller = controller;
     return RoundedTextFieldContainer(
-        padding: const EdgeInsets.only(left: 25, right: 10),
+        padding: widget.padding,
+        margin: widget.margin,
+        color: widget.backgroundColor,
+        borderRadius: widget.borderRadius,
+        height: widget.height,
+        boxShadow: widget.boxShadow,
         textField: Stack(
           children: [
             TextField(
+              onChanged: (text) {
+                widget.onChange(text);
+              },
               controller: controller,
               obscureText:
                   widget.isPasswordField ? widget.passwordEncrypted : false,
               cursorColor: widget.textColor,
               style: TextStyle(
-                  color: widget.textColor,
-                  fontWeight: widget.fontWeight,
-                  fontSize: widget.fontSize),
+                color: widget.textColor,
+                fontWeight: widget.fontWeight,
+                fontSize: widget.fontSize,
+              ),
               decoration: InputDecoration(
-                  icon: widget.icon != null
-                      ? Icon(
-                          widget.icon,
-                          color: widget.textColor,
-                        )
-                      : null,
-                  hintText: widget.hintText,
-                  border: widget.border,
-                  hintStyle: TextStyle(
-                      color: widget.textColor.withOpacity(0.7),
-                      fontWeight: widget.fontWeight)),
+                icon: widget.icon != null
+                    ? Icon(
+                        widget.icon,
+                        color: widget.textColor,
+                      )
+                    : null,
+                hintText: widget.hintText,
+                border: widget.border,
+                hintStyle: TextStyle(
+                    color: widget.textColor.withOpacity(0.7),
+                    fontWeight: widget.fontWeight),
+              ),
             ),
+            if (widget.suffix != null) ...[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [widget.suffix!],
+              )
+            ],
             if (widget.isPasswordField) ...[
               Positioned(
                   right: 10,
@@ -89,14 +119,16 @@ class RoundedTextFieldContainer extends StatefulWidget {
   EdgeInsets margin;
   Widget textField;
   EdgeInsets? padding;
+  List<BoxShadow>? boxShadow;
   RoundedTextFieldContainer(
       {Key? key,
       this.color = StarLinkColors.kPrimaryLightColor,
       this.height = 50,
       this.borderRadius = 25,
-      this.margin = const EdgeInsets.only(left: 25, top: 15, right: 25),
+      this.margin = const EdgeInsets.only(left: 25, right: 25),
       required this.textField,
-      this.padding})
+      this.padding,
+      this.boxShadow})
       : super(key: key);
 
   @override
@@ -112,9 +144,9 @@ class _RoundedTextFieldContainerState extends State<RoundedTextFieldContainer> {
       padding: widget.padding,
       height: widget.height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(widget.borderRadius),
-        color: widget.color,
-      ),
+          borderRadius: BorderRadius.circular(widget.borderRadius),
+          color: widget.color,
+          boxShadow: widget.boxShadow),
       child: widget.textField,
     );
   }
