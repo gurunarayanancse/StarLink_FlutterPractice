@@ -7,7 +7,9 @@ import 'package:star_link/customWidgets/StarLinkText.dart';
 
 class CategoryListView extends StatefulWidget {
   Iterable<Category> categories;
-  CategoryListView({Key? key, required this.categories}) : super(key: key);
+  Function onTapped;
+  CategoryListView({Key? key, required this.categories, required this.onTapped})
+      : super(key: key);
 
   @override
   State<CategoryListView> createState() => _CategoryListViewState();
@@ -28,7 +30,9 @@ class _CategoryListViewState extends State<CategoryListView> {
               child: CategoryCard(
                 title: widget.categories.elementAt(index).title,
                 icon: widget.categories.elementAt(index).icon,
-                onPressed: () {},
+                onPressed: () {
+                  widget.onTapped(index);
+                },
               ),
             ),
           )),

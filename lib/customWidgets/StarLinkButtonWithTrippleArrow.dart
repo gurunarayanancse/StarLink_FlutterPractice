@@ -7,6 +7,7 @@ class StarLinkButtonWithArrow extends StatelessWidget {
   bool? isResponsive;
   double? width;
   double height;
+  double textSize;
   double borderRadius;
   String title;
   Color color;
@@ -14,6 +15,7 @@ class StarLinkButtonWithArrow extends StatelessWidget {
   Image? image;
   Color textColor;
   EdgeInsets? margin;
+  EdgeInsets? padding;
   Icon? rightIcon;
   MainAxisAlignment alignment;
   StarLinkButtonWithArrow(
@@ -29,7 +31,9 @@ class StarLinkButtonWithArrow extends StatelessWidget {
       this.textColor = Colors.white,
       this.margin,
       this.rightIcon,
-      this.alignment = MainAxisAlignment.spaceAround})
+      this.alignment = MainAxisAlignment.spaceAround,
+      this.padding,
+      this.textSize = 17})
       : super(key: key);
 
   @override
@@ -38,6 +42,7 @@ class StarLinkButtonWithArrow extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
+      padding: padding,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius), color: color),
       child: Row(mainAxisAlignment: alignment, children: [
@@ -46,6 +51,7 @@ class StarLinkButtonWithArrow extends StatelessWidget {
             text: title,
             color: textColor,
             fontWeight: fontWeight,
+            size: textSize,
           ),
         ],
         if (image != null) ...[image!],

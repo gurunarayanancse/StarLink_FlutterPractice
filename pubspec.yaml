@@ -39,7 +39,7 @@ dependencies:
   fluttertoast: ^8.0.9
   flutter_slidable: ^2.0.0
   badges: ^2.0.3
-
+  scrollable_positioned_list: ^0.3.2
 
 dev_dependencies:
   flutter_test:

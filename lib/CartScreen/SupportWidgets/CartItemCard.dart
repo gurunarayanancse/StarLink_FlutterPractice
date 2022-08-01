@@ -35,10 +35,12 @@ class _CartItemCardState extends State<CartItemCard> {
               margin: const EdgeInsets.all(10),
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: CupertinoColors.lightBackgroundGray,
+                  color: widget
+                      .product.bgColor[widget.product.selectedColorIndex]
+                      .withOpacity(0.4),
                   borderRadius: BorderRadius.circular(8)),
               child: Image.asset(
-                widget.product.image,
+                widget.product.image[widget.product.selectedColorIndex],
                 width: 75,
                 height: 82,
               ),
@@ -62,6 +64,19 @@ class _CartItemCardState extends State<CartItemCard> {
                 const SizedBox(
                   height: 10,
                 ),
+                if (widget.product.isCustomizable) ...[
+                  StarLinkTextLabel(
+                    maxLines: 1,
+                    text:
+                        "Size : ${widget.product.size?[widget.product.selectedSizeIndex]}",
+                    fontWeight: FontWeight.w600,
+                    size: 14,
+                    color: Colors.black54,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
                 StarLinkTextLabel(
                   maxLines: 1,
                   text: "\$${widget.product.price}",

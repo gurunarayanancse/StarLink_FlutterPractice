@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:star_link/CartScreen/SupportWidgets/CartHeader.dart';
 import 'package:star_link/CartScreen/SupportWidgets/CartListView.dart';
 import 'package:star_link/Homepage/HomePage.dart';
+import 'package:star_link/QRScreen/QRScreen.dart';
 import 'package:star_link/StarLinkColor.dart';
 import 'package:star_link/ViewModel.dart';
 import 'package:star_link/customWidgets/StarLinkText.dart';
@@ -39,6 +40,7 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    // print(widget.productList.map((e) => e.cartId));
     return Scaffold(
       backgroundColor: widget.productList.isEmpty
           ? CupertinoColors.white
@@ -57,6 +59,10 @@ class _CartScreenState extends State<CartScreen> {
                                 refreshStates();
                               },
                             )));
+              },
+              onTapQR: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => const QRScreen()));
               },
             ),
             if (widget.productList.isNotEmpty) ...[

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:star_link/Models/Category.dart';
 import 'package:star_link/StarLinkColor.dart';
 import 'package:star_link/ViewModel.dart';
@@ -18,9 +19,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ProductViewModel productViewModel = ProductViewModel();
+  final ItemScrollController itemScrollController = ItemScrollController();
+
   @override
   Widget build(BuildContext context) {
-    List<Category> categoriesList = productViewModel.categories
+    List<Category> categoriesList = productViewModel
+        .getAllProducts()
         .where((element) => element.products.isNotEmpty)
         .toList();
     int cartQuantity = 0;
@@ -45,12 +49,19 @@ class _HomePageState extends State<HomePage> {
                     Navigator.pop(context, () {});
                   },
                 ),
-                CategoryListView(categories: categoriesList),
+                CategoryListView(
+                    categories: categoriesList,
+                    onTapped: (index) {
+                      itemScrollController.scrollTo(
+                          index: index,
+                          duration: const Duration(milliseconds: 100));
+                    }),
                 const SizedBox(
                   height: 10,
                 ),
                 Expanded(
-                    child: ListView.builder(
+                    child: ScrollablePositionedList.builder(
+                        itemScrollController: itemScrollController,
                         itemCount: categoriesList.length,
                         itemBuilder: (_, index) => ProductSection(
                               category: categoriesList.elementAt(index),

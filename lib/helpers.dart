@@ -28,3 +28,8 @@ void showToast(BuildContext context, String text, Duration duration) {
       gravity: ToastGravity.BOTTOM,
       toastDuration: duration);
 }
+
+String idGenerator() {
+  final now = DateTime.now();
+  return now.microsecondsSinceEpoch.toString();
+}

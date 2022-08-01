@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:star_link/StarLinkColor.dart';
 
@@ -29,6 +30,7 @@ class _CartListViewState extends State<CartListView> {
                 children: [
                   CustomSlidableAction(
                     padding: EdgeInsets.zero,
+                    backgroundColor: Colors.transparent,
                     onPressed: (context) {
                       setState(() {
                         widget.doProductsChanged(0, index);
