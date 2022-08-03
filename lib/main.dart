@@ -6,6 +6,7 @@ import 'package:star_link/OnboardingViews/OnBoardingScreen.dart';
 
 import 'Authendication/LoginMainWidget.dart';
 
+//Inital Commit on provider
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
