@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:star_link/StarLinkColor.dart';
+import 'package:star_link/Helpers/StarLinkColor.dart';
 import 'package:star_link/Views/Authendication/WelcomeScreenBackground.dart';
 import 'package:star_link/Views/Authendication/signInComponentGroupWidget.dart';
 import 'package:star_link/Views/customWidgets/StarLinkText.dart';

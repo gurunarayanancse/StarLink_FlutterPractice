@@ -1,9 +1,9 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:star_link/ViewModel.dart';
+import 'package:star_link/ViewModels/ViewModel.dart';
 
-import '../../../StarLinkColor.dart';
+import '../../../Helpers/StarLinkColor.dart';
 import '../../customWidgets/StarLinkText.dart';
 import 'SearchBar.dart';
 

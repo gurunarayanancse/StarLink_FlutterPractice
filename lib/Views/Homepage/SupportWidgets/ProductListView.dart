@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:star_link/ViewModel.dart';
+import 'package:star_link/Helpers/helpers.dart';
+import 'package:star_link/ViewModels/ViewModel.dart';
 import 'package:star_link/Views/ProductVarientScreen/ProductVarientScreen.dart';
-import 'package:star_link/helpers.dart';
 
 import '../../../Models/Product.dart';
 import 'ProductCard.dart';

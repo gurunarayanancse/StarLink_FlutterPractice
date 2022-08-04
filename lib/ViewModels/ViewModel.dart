@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 
-import 'Models/Category.dart';
-import 'Models/Product.dart';
+import '../Models/Category.dart';
+import '../Models/Product.dart';
 
 class ProductViewModel {
   List<Category> _categories = [];

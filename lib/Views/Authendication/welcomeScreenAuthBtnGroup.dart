@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../StarLinkColor.dart';
+import '../../Helpers/StarLinkColor.dart';
 import '../customWidgets/StarLinkButtonWithTrippleArrow.dart';
 import 'SignInScreen.dart';
 import 'SignUpScreen.dart';

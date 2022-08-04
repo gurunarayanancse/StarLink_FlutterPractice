@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:star_link/Helpers/StarLinkColor.dart';
 import 'package:star_link/Models/Product.dart';
-import 'package:star_link/StarLinkColor.dart';
-import 'package:star_link/ViewModel.dart';
+import 'package:star_link/ViewModels/ViewModel.dart';
 import 'package:star_link/Views//CartScreen/CartScreen.dart';
 import 'package:star_link/Views/Homepage/SupportWidgets/QuantityButton.dart';
 import 'package:star_link/Views/customWidgets/StarLinkButtonWithTrippleArrow.dart';

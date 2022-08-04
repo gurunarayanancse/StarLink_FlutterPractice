@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:star_link/StarLinkColor.dart';
+import 'package:star_link/Helpers/StarLinkColor.dart';
 
 class RoundedTextField extends StatefulWidget {
   final String hintText;

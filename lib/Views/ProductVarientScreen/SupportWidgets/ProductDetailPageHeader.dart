@@ -1,7 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:star_link/StarLinkColor.dart';
+import 'package:star_link/Helpers/StarLinkColor.dart';
 import 'package:star_link/Views/customWidgets/StarLinkText.dart';
 
 class ProductDetailPageHeader extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:star_link/StarLinkColor.dart';
+import 'package:star_link/Helpers/StarLinkColor.dart';
 import 'package:star_link/Views/Authendication/WelcomeScreenBackground.dart';
 import 'package:star_link/Views/Authendication/signInComponentGroupWidget.dart';
 

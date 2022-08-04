@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:star_link/Helpers/helpers.dart';
 import 'package:star_link/Views/Authendication/SignUpScreen.dart';
 import 'package:star_link/Views/CartScreen/CartScreen.dart';
-import 'package:star_link/helpers.dart';
 
-import '../../StarLinkColor.dart';
+import '../../Helpers/StarLinkColor.dart';
 import '../customWidgets/RoundedTextField.dart';
 import '../customWidgets/Separator.dart';
 import '../customWidgets/StarLinkButtonWithTrippleArrow.dart';

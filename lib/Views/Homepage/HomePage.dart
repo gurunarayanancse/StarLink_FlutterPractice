@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:star_link/Helpers/StarLinkColor.dart';
 import 'package:star_link/Models/Category.dart';
-import 'package:star_link/StarLinkColor.dart';
-import 'package:star_link/ViewModel.dart';
+import 'package:star_link/ViewModels/ViewModel.dart';
 
 import 'SupportWidgets/CategoryListView.dart';
 import 'SupportWidgets/Header.dart';

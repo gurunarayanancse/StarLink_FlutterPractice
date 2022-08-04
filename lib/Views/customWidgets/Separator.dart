@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../StarLinkColor.dart';
+import '../../Helpers/StarLinkColor.dart';
 import 'StarLinkText.dart';
 
 class Seperator extends StatelessWidget {

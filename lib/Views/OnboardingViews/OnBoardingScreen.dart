@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:star_link/StarLinkColor.dart';
+import 'package:star_link/Helpers/StarLinkColor.dart';
 import 'package:star_link/Views/customWidgets/StarLinkText.dart';
 
 import '../Authendication/LoginMainWidget.dart';
