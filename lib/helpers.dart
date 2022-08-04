@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:star_link/StarLinkColor.dart';
 
-import 'customWidgets/Toast.dart';
+import 'Views/customWidgets/Toast.dart';
 
 extension EmailValidator on String {
   bool isValidEmail() {
