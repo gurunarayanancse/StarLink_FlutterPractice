@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:star_link/Views//CartScreen/CartScreen.dart';
-import 'package:star_link/Views/OnboardingViews/OnBoardingScreen.dart';
 
-import 'Views/Authendication/LoginMainWidget.dart';
+import 'StarLink/Views/Authendication/LoginMainWidget.dart';
+import 'StarLink/Views/CartScreen/CartScreen.dart';
+import 'StarLink/Views/OnboardingViews/OnBoardingScreen.dart';
 
 //Inital Commit on provider
 Future<void> main() async {
